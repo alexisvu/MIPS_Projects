@@ -1,5 +1,6 @@
 #################################################
 # PALINDROME PROGRAM - VIRTUAL HACKATHON CHALLENGE 
+# This program parses a user-entered string and determines whether the string is a palindrome.
 # BY ALEXIS K. VU 
 # CS 3340 - DR. MAZIDI 
 #	DUE: 22 JULY 2018
