@@ -491,32 +491,20 @@ checkNegative:
 
 # print error string from negative/0 number result 
 printErrorMessage: 
-	la	$a0, negativeNum	# load address of neg# error message 
-	li	$v0, 4			# system call for printing string 
-	syscall				# execute 
-	
+	print(negativeNum)
 	jal clearRegisters		# clear contents of reg. for another attempt 
-	
 	j	exit 			# terminate program
 
 # reached if user does not enter an expression 
 printEmptyMessage: 
-	la	$a0, emptyStr		# load address of empty string to print 
-	li	$v0, 4			# system call to print a string 
-	syscall				# execute 
-	
+	print(emptyStr)
 	jal	clearRegisters 		# clear registers for next attempt
-	
 	j	exit			# terminate program
 
 # indicates user has entered unproperly formatted rom. numerals 
 printFormatError: 
-	la	$a0, badFormat		# load address of bad format message
-	li	$v0, 4			# system call to print string 
-	syscall				# execute 
-	
+	print(badFormat)
 	jal	clearRegisters		# clear registers for next attempt 
-	
 	j	exit 			# terminate program
 
 # empty contents of all registers for next iterations 
