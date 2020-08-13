@@ -6,6 +6,7 @@
 # 	Due: 7/22/2018
 #####################################################################################################################
 
+	.include "macro_strings.asm"
 
 	.data
 welcome:	.asciiz	"Welcome to the Roman Numeral calculator!\n" 				# welcome user to program 
@@ -46,11 +47,8 @@ space:		.byte	' '
 	.text
 main: 
 	#####################  PROMPTING MESSAGES  ######################################################
-	
-	# print welcome message and instructions to user 
-	la	$a0, welcome		# load address of welcome message
-	li	$v0, 4			# system call to print string 
-	syscall				# execute 
+
+	print(welcome)	# print welcome message
 	
 	# present operations features to user 
 	la	$a0, features		# load address of features message 
