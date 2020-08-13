@@ -428,20 +428,9 @@ I_NextDigit2:
 ################################################################################################################
 
 printAnswer: 	
-
-	# echo user's mathematical expression
-	la	$a0, userExpr 
-	li	$v0, 4
-	syscall 
-
-	la	$a0, maxRead		# load address of buffer space 
-	li	$v0, 4			# system call to print string 
-	syscall 			# execute 
-	
-	# print "equals"
-	la	$a0, equals		# load address of "equals" string
-	li	$v0, 4			# system call for printing string 
-	syscall 			# execute 
+	print(userExpr)	# echo user's mathematical expression
+	print(maxRead)	# print contents of buffer that hold user's expression input
+	print(equals)	# print "equals"
 	
 	move 	$a0, $t8		# load address of solution
 	li	$v0, 1			# system call for printing integer 
