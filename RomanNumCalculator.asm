@@ -6,19 +6,10 @@
 # 	Due: 7/22/2018
 #####################################################################################################################
 
+	.include "constants.asm"
 	.include "macro_strings.asm"
 
 	.data
-welcome:	.asciiz	"Welcome to the Roman Numeral calculator!\n" 				# welcome user to program 
-features:	.asciiz "This calculator can add and subtract Roman Numeral expressions with BINARY operators\n"	# list features
-example:	.asciiz "(Example: XIX+VIII) - Following this format is important - no spaces!\n"	# give user example to follow
-warning:	.asciiz "D and M Roman Numerals not included in this project\n" 		# restrictions 
-prompt:		.asciiz	"Enter a mathematical expression in Roman Numerals: "			# prompt user for equation 
-userExpr:	.asciiz "\nUser expression: "
-equals:		.asciiz	"Expression equals:  " 								# btw/ input & answer 
-negativeNum:	.asciiz "Your number was invalid. Roman Numerals cannot represent zero or negative values. Please try again.\n"	# error message
-badFormat:	.asciiz "Please format your expression with one binary operator and standardized Roman Numeral rules and try again.\n" # error message
-emptyStr:	.asciiz	"User did not enter an expression. Please try again.\n" 
 
 maxRead:	.space	50	# max num. of characters to be read in  
 maxWrite:	.space	100	# max num. of characters to be written out 
@@ -28,21 +19,6 @@ operand2:	.word	0	# will hold value of second operand
 resultNum:	.word	0	# will hold the solution to math expression 
 addMode:	.word	1 	# indicates that user indicated add operation 
 subMode:	.word	0	# indicates that user indicated sub operation 
-
-valueC:		.word	100 	# num equiv of C
-valueL:		.word	50	# num equiv of L
-valueX:		.word	10	# num oquiv of X
-valueV:		.word	5	# num equiv of V
-valueI:		.word	1	# num equiv of I
-
-C:		.byte	'C'	# declare char reps of roman nums. and operators 
-L:		.byte	'L'
-X:		.byte	'X'
-V:		.byte	'V'
-I:		.byte	'I'
-addition: 	.byte	'+'
-subtraction: 	.byte	'-'
-space:		.byte	' '
 
 	.text
 main: 
