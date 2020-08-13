@@ -8,6 +8,7 @@
 
 	.include "constants.asm"
 	.include "macro_strings.asm"
+	.include "macro_calculations.asm"
 
 	.data
 
