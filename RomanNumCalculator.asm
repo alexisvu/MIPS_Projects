@@ -491,40 +491,15 @@ checkNegative:
 
 # print error string from negative/0 number result 
 printErrorMessage: 
-	print(negativeNum)
-	jal clearRegisters		# clear contents of reg. for another attempt 
+	print(negativeNum) 
 	j	exit 			# terminate program
 
 # reached if user does not enter an expression 
 printEmptyMessage: 
 	print(emptyStr)
-	jal	clearRegisters 		# clear registers for next attempt
 	j	exit			# terminate program
 
 # indicates user has entered unproperly formatted rom. numerals 
 printFormatError: 
 	print(badFormat)
-	jal	clearRegisters		# clear registers for next attempt 
 	j	exit 			# terminate program
-
-# empty contents of all registers for next iterations 
-clearRegisters: 
-	li	$t0, 0			# clear all registers for next iteration 
-	li	$t1, 0
-	li	$t2, 0
-	li	$t4, 0 
-	li	$t5, 0
-	li	$t6, 0
-	li	$t7, 0
-	li	$t8, 0
-	li	$t9, 0 
-	li	$s0, 0
-	li	$s1, 0
-	li	$s2, 0
-	li	$s3, 0
-	li	$s4, 0
-	li	$s5, 0
-	li	$s6, 0
-	li	$s7, 0
-	
-	jr	$ra			# hop back to previous instruction 
