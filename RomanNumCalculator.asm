@@ -49,27 +49,10 @@ main:
 	#####################  PROMPTING MESSAGES  ######################################################
 
 	print(welcome)	# print welcome message
-	
-	# present operations features to user 
-	la	$a0, features		# load address of features message 
-	li	$v0, 4			# system call to print string 
-	syscall				# execute 
-	
-	# print example input for user to follow 
-	la	$a0, example 		# load address of example message
-	li	$v0, 4			# system call to print string 
-	syscall				# execute 
-	
-	# print restriction warning 
-	la	$a0, warning 		# load address of warning message 
-	li	$v0, 4			# system call to print string 
-	syscall 			# execute 
-	
-	# print enter prompt to user 
-	la	$a0, prompt 		# load address of prompt message 
-	li	$v0, 4			# system call to print string 
-	syscall				# execute  
-	
+	print(features)	# print description of program functionality
+	print(example)	# print example input for user to follow
+	print(warning)	# print warning for input restrictions
+	print(prompt)	# print Roman numeral expression prompt
 	
 	##################### READ & INTERPRET USER INPUT ######################################################
 	
